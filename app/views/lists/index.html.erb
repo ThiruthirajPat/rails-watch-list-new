@@ -1,0 +1,33 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.themoviedb.org/t/p/original/nDLylQOoIazGyYuWhk21Yww5FCb.jpg);">
+  <div class="container">
+    <h1>Welcome to<strong> MovieStar</strong> !</h1>
+    <p>Your Online Movie Platform</p>
+    <div class="btn btn-warning"> <%= link_to 'Add New Movie List', new_list_path %></div>
+  </div>
+</div>
+<br>
+<h1>My Lists</h1>
+<div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-4">
+        <div class="card">
+          <div class="card-image"></div>
+          <div class="card-content">
+          <%= image_tag 'https://www.themoviedb.org/t/p/original/53P8oHo9cfOsgb1cLxBi4pFY0ja.jpg', size:"100x300", :class => "card-img-top" %>
+            <div class="flat-card-title">
+              <h4><%= list.name %></h4>
+            </div>
+          </div>
+          <div class="flat-card-actions">
+            <%= link_to 'More info', list_path(list) %>
+            <%= link_to "Remove", list_path(list),
+                method: :delete, 
+                data: { confirm: "Are you sure?" },
+                class: 'ml-3 text-danger'
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
