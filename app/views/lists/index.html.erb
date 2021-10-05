@@ -14,7 +14,7 @@
         <div class="card">
           <div class="card-image"></div>
           <div class="card-content">
-          <%= image_tag 'https://www.themoviedb.org/t/p/original/53P8oHo9cfOsgb1cLxBi4pFY0ja.jpg', size:"100x300", :class => "card-img-top" %>
+          <%= image_tag @list.photo.key, size:"100x300", :class => "card-img-top" %>
             <div class="flat-card-title">
               <h4><%= list.name %></h4>
             </div>
