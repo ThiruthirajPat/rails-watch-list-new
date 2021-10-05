@@ -1,6 +1,6 @@
 <div class="fs-1 text-center"><h1><%= @list.name %><h1></div>
 <div class="fs-4">
-  <%= image_tag 'https://www.themoviedb.org/t/p/original/53P8oHo9cfOsgb1cLxBi4pFY0ja.jpg', size:"100x700", :class => "card-img-top" %>
+  
 </div>
 <br>
 <div class="row">
@@ -9,6 +9,7 @@
         <div class="card">
           <div class="card-image"></div>
           <div class="card-content">
+          <%= image_tag b.movie.poster_url, size:"100x400", :class => "card-img-top" %>
             <div class="flat-card-title">
               <h4>Movie Title: <%= b.movie.title %></h4>
               <h5><%= b.movie.overview %></h5>
