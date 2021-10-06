@@ -14,7 +14,7 @@
         <div class="card">
           <div class="card-image"></div>
           <div class="card-content">
-          <%= image_tag @list.photo.key, size:"100x300", :class => "card-img-top" %>
+          <%= cl_image_tag list.photo.key, size:"100x300", :class => "card-img-top" %>
             <div class="flat-card-title">
               <h4><%= list.name %></h4>
             </div>
