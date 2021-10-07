@@ -3,7 +3,7 @@
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
         <h3>Add a comment</h3>
-        <%= simple_form_for [@list, @review] do |f| %>
+        <%= simple_form_for [list, review] do |f| %>
           <%= f.input :content, placeholder: 'Enter a comment about the list' %>
           <%= f.submit class: 'btn btn-outline-primary' %>
         <% end %>
