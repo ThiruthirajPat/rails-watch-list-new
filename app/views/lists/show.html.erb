@@ -37,9 +37,11 @@
          <div class="card-content">
             <p>Comment <%= b.id %>: <%= b.content %></p>
              <%= link_to "Delete", b,
-            method: :delete, 
+             method: :delete, 
              data: { confirm: "Are you sure?" }
             %>
+         </div>
+        </div>
       </div>
       <% end %>
   </div>
