@@ -32,7 +32,7 @@ class ListsController < ApplicationController
           render :new
         end
     end
-            
+    
     private
     
     def set_list

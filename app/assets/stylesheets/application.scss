@@ -11,3 +11,19 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+a:link, a:visited {
+    background-color: #2420ee;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    }
+    
+    a:hover, a:active {
+      background-color: rgb(0, 102, 255);
+    }

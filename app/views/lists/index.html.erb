@@ -1,32 +1,31 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.themoviedb.org/t/p/original/nDLylQOoIazGyYuWhk21Yww5FCb.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(https://res.cloudinary.com/lpazuritp2021/image/upload/v1633587668/theater_rfyafk.jpg)">
   <div class="container">
     <h1><strong> MovieStar</strong> brings you the best<strong> Movies from Hollywood</strong> !</h1>
-    <p>Create your own movie lists and share with your friends</p>
-    <div class="btn btn-flat"> <%= link_to 'Add New Movie List', new_list_path %></div>
+    <p>Create your own movie lists and share them with your friends</p>
+    <div class="text-center"> <%= link_to 'Add New Movie List', new_list_path %></div>
   </div>
 </div>
 <br>
-<h1>My Lists</h1>
+<span class="text-center m-2"><h1>Your Movie Lists</h1></span>
 <div class="row">
     <% @lists.each do |list| %>
       <div class="col-4">
         <div class="card">
           <div class="card-image"></div>
           <div class="card-content">
-          <%= cl_image_tag list.photo.key, size:"100x300", :class => "card-img-top" %>
-            <div class="flat-card-title">
+          <%= cl_image_tag list.photo.key, size:"50x400", :class => "card-img-top" %>
+            <div class="flat-card-title text-center m-2">
               <h4><%= list.name %></h4>
             </div>
           </div>
-          <div class="flat-card-actions">
+          <div class="flat-card-actions m-2 d-flex flex-row bd-highlight justify-content-center">
             <%= link_to 'More info', list_path(list) %>
             <%= link_to "Remove", list_path(list),
                 method: :delete, 
-                data: { confirm: "Are you sure?" },
-                class: 'ml-3 text-danger'
+                data: { confirm: "Are you sure?" }
             %>
-            <button type="button" class="btn btn-warning"><%= link_to "Add Bookmark", new_list_bookmark_path(list) %></button>
+            <%= link_to "Add Bookmark", new_list_bookmark_path(list) %>
           </div>
         </div>
       </div>

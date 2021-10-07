@@ -1,6 +1,6 @@
 <div class="fs-1 text-center"><h1><%= @list.name %><h1></div>
 <div class="fs-4">
-  
+ <%= cl_image_tag @list.photo.key, size:"50x1000", :class => "card-img-top" %>
 </div>
 <br>
 <div class="row">
@@ -9,16 +9,40 @@
         <div class="card">
           <div class="card-image"></div>
           <div class="card-content">
-          <%= image_tag b.movie.poster_url, size:"100x400", :class => "card-img-top" %>
+            <%= image_tag b.movie.poster_url, size:"100x400", :class => "card-img-top" %>
             <div class="flat-card-title">
               <h4>Movie Title: <%= b.movie.title %></h4>
-              <h5><%= b.movie.overview %></h5>
-              <p>Comment: <%= b.comment %></p>
+                <div class="">
+                  <h5><%= b.movie.overview %></h5>
+                </div>
+                <div class="">
+                  <p>Comment: <%= b.comment %></p>
+                </div>
             </div>
           </div>
         </div>
       </div>
-    <% end %>
+      <% end %>
+</div>
+<div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+    <div class="p-2 bd-highlight"><%= link_to "Back", lists_path %></div>
+    <div class="p-2 bd-highlight"><%= link_to "Add Bookmark", new_list_bookmark_path(@list) %></div>
+    <div class="p-2 bd-highlight"><%= link_to "Add Review", new_list_review_path(@list) %></div>
+</div>
+<h3>Comments</h3>
+<div class="row d-flex flex-column bd-highlight mb-3 justify-content-center ">
+    <% @list.reviews.each do |b| %>
+      <div class="col-4">
+        <div class="card">
+         <div class="card-content">
+            <p>Comment <%= b.id %>: <%= b.content %></p>
+             <%= link_to "Delete", b,
+            method: :delete, 
+             data: { confirm: "Are you sure?" }
+            %>
+      </div>
+      <% end %>
   </div>
-<button type="button" class="btn btn-warning"><%= link_to "Back", lists_path %></button>
-<button type="button" class="btn btn-warning"><%= link_to "Add Bookmark", new_list_bookmark_path(@list) %></button>
+
+</div>
+
